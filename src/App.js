@@ -46,7 +46,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // user has logged in...
-        console.log(authUser);
+
         setUser(authUser);
       } else {
         //user has logged out...
@@ -67,7 +67,7 @@ function App() {
         snapshot.docs.map((doc) => ({
           id: doc.id,
           post: doc.data(),
-        }))
+        })),
       );
     });
   }, [posts]);
@@ -99,7 +99,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className='app'>
       {user?.displayName ? (
         <ImageUpload username={user.displayName} />
       ) : (
@@ -108,32 +108,32 @@ function App() {
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <form className="app__signUp">
+          <form className='app__signUp'>
             <center>
               <img
-                className="app__headerImage"
-                src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923"
-                alt="logo"
+                className='app__headerImage'
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923'
+                alt='logo'
               />
             </center>
 
             <Input
-              placeholder="username"
-              type="text"
+              placeholder='username'
+              type='text'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
 
             <Input
-              placeholder="email"
-              type="text"
+              placeholder='email'
+              type='text'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
-              placeholder="password"
-              type="password"
+              placeholder='password'
+              type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -145,25 +145,25 @@ function App() {
 
       <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <form className="app__signUp">
+          <form className='app__signUp'>
             <center>
               <img
-                className="app__headerImage"
-                src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923"
-                alt="logo"
+                className='app__headerImage'
+                src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923'
+                alt='logo'
               />
             </center>
 
             <Input
-              placeholder="email"
-              type="text"
+              placeholder='email'
+              type='text'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
-              placeholder="password"
-              type="password"
+              placeholder='password'
+              type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -173,23 +173,23 @@ function App() {
         </div>
       </Modal>
 
-      <div className="app__header">
+      <div className='app__header'>
         <img
-          className="app__headerImage"
-          src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923"
-          alt="logo"
+          className='app__headerImage'
+          src='https://dewey.tailorbrands.com/production/brand_version_mockup_image/839/4037480839_98239a3f-c15c-4473-883c-7dcf3b4b7b79.png?cb=1604238923'
+          alt='logo'
         />
 
         {user ? (
-          <Button className="btn" onClick={() => auth.signOut()}>
+          <Button className='btn' onClick={() => auth.signOut()}>
             Logout
           </Button>
         ) : (
-          <div className="app__loginContainer">
-            <Button className="btn" onClick={() => setOpenSignIn(true)}>
+          <div className='app__loginContainer'>
+            <Button className='btn' onClick={() => setOpenSignIn(true)}>
               Sign In
             </Button>
-            <Button className="btn" onClick={() => setOpen(true)}>
+            <Button className='btn' onClick={() => setOpen(true)}>
               Sign up
             </Button>
           </div>
